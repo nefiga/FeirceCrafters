@@ -38,7 +38,6 @@ public class SpriteBatch {
      */
     public SpriteBatch(String shader, Texture texture, int size) {
         this.size = size;
-        System.out.println("Creating vertext buffer");
         vertex = BufferUtils.createFloatBuffer(size * 8);
         texCords = BufferUtils.createFloatBuffer(size * 8);
         elements = BufferUtils.createShortBuffer(size * 10);

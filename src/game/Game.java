@@ -11,7 +11,7 @@ public class Game extends GameLoop {
     TextureAtlas atlas;
     SpriteBatch spriteBatch;
 
-    int[] testImage, testImageTwo;
+    Sprite testImage, testImageTwo;
 
     public void init() {
         super.init();
@@ -32,12 +32,12 @@ public class Game extends GameLoop {
         glClear(GL_COLOR_BUFFER_BIT);
 
         spriteBatch.begin();
-        spriteBatch.draw(5, 5, testImage[0], testImage[1], testImage[2], testImage[3]);
-        spriteBatch.draw(200, 100, testImage[0], testImage[1], testImage[2], testImage[3]);
-        spriteBatch.draw(324, 35, testImage[0], testImage[1], testImage[2], testImage[3]);
-        spriteBatch.draw(5, 678, testImage[0], testImage[1], testImage[2], testImage[3]);
-        spriteBatch.draw(467, 694, testImage[0], testImage[1], testImage[2], testImage[3]);
-        spriteBatch.draw(853, 683, testImageTwo[0], testImageTwo[1], testImageTwo[2], testImageTwo[3]);
+        spriteBatch.draw(5, 5, testImage.startX, testImage.startY, testImage.width, testImage.height);
+        spriteBatch.draw(200, 100, testImage.startX, testImage.startY, testImage.width, testImage.height);
+        spriteBatch.draw(324, 35, testImage.startX, testImage.startY, testImage.width, testImage.height);
+        spriteBatch.draw(5, 678, testImage.startX, testImage.startY, testImage.width, testImage.height);
+        spriteBatch.draw(467, 694, testImage.startX, testImage.startY, testImage.width, testImage.height);
+        spriteBatch.draw(853, 683, testImage.startX, testImage.startY, testImage.width, testImage.height);
         spriteBatch.end();
     }
 
