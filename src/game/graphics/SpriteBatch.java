@@ -109,6 +109,7 @@ public class SpriteBatch {
     }
 
     public void flush() {
+        //System.out.println("Flushing sprite batch because max render count was reached");
         end();
         begin();
     }
@@ -160,6 +161,8 @@ public class SpriteBatch {
      * @param rotate       If the image should be rotate and in what direction it should be rotate
      */
     public void draw(float x, float y, int drawWidth, int drawHeight, int textureX, int textureY, int textureWidth, int textureHeight, int rotate) {
+        if (renderCount >= size) flush();
+
         float x1 = convertXPixelsToCoordinate(x);
         float y1 = convertYPixelsToCoordinate(y);
         float x2 = convertXPixelsToCoordinate(x + drawWidth);
@@ -198,8 +201,6 @@ public class SpriteBatch {
                 break;
         }
 
-        System.out.println("Limit: " + vertex.limit() + " Actual size: " + vertex.position());
-
         texCords.put(tx1).put(ty1);// Top left
         texCords.put(tx2).put(ty1);// Top right
         texCords.put(tx1).put(ty2);// Bottom left
@@ -208,7 +209,6 @@ public class SpriteBatch {
         updateElements();
 
         renderCount++;
-        if (renderCount >= size) flush();
     }
 
     private void updateElements() {
