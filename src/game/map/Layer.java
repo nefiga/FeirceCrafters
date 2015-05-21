@@ -2,6 +2,7 @@ package game.map;
 
 import game.graphics.SpriteBatch;
 import game.tiles.Tile;
+import game.tiles.Tiles;
 
 public class Layer {
 
@@ -23,7 +24,7 @@ public class Layer {
         tiles = new Tile[width * height];
 
         for (int i = 0; i < tiles.length; i++) {
-            tiles[i] = Tile.greenTile;
+            tiles[i] = Tiles.greenTile;
         }
 
         durabilty = new int[width * height];

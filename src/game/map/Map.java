@@ -1,6 +1,6 @@
 package game.map;
 
-import game.tiles.Tile;
+import game.tiles.Tiles;
 
 import java.util.HashMap;
 
@@ -11,7 +11,7 @@ public class Map {
     private Layer currentLayer;
 
     public Map() {
-        currentLayer = new Layer(Tile.spriteBatch, 30, 20);
+        currentLayer = new Layer(Tiles.spriteBatch, 30, 20);
     }
 
     public void renderMap(int offsetX, int offsetY) {

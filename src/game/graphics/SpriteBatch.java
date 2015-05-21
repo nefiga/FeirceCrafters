@@ -18,17 +18,22 @@ import static org.lwjgl.opengl.GL30.glGenVertexArrays;
 
 public class SpriteBatch {
 
-    Texture texture;
-    ShaderManager shader;
+    private Texture texture;
+    private ShaderManager shader;
 
-    FloatBuffer vertex, texCords;
-    ShortBuffer elements;
+    private FloatBuffer vertex, texCords;
+    private ShortBuffer elements;
 
-    int vboID, vaoID, texID, eboID;
-    int points = 0;
-    int size;
-    int renderCount;
-    short elementPosition = 0;
+    private int vboID, vaoID, texID, eboID;
+    private int points = 0;
+    private int size;
+    private int renderCount;
+    private short elementPosition = 0;
+
+    private boolean flushing;
+
+    private int xOffset;
+    private int yOffset;
 
     // Rotates the image clockwise
     public static final int NO_ROTATE = 0, ROTATE_90 = 1, ROTATE_180 = 2, ROTATE_270 = 3;
@@ -77,11 +82,17 @@ public class SpriteBatch {
         texture.bind();
         glBindVertexArray(vaoID);
 
+        if (!flushing) {
+            xOffset = 0;
+            yOffset = 0;
+        }
+
         vertex.clear();
         texCords.clear();
         elements.clear();
         points = 0;
         elementPosition = 0;
+        flushing = false;
     }
 
     /**
@@ -109,9 +120,10 @@ public class SpriteBatch {
     }
 
     public void flush() {
-        //System.out.println("Flushing sprite batch because max render count was reached");
+        flushing = true;
+
         end();
-        begin();
+        begin();    
     }
 
     /**
@@ -133,16 +145,26 @@ public class SpriteBatch {
         shader.unBind();
     }
 
-    public void draw(float x, float y, int textureX, int textureY, int width, int height) {
-        draw(x, y, width, height, textureX, textureY, width, height, NO_ROTATE);
+    /**
+     * Sets how offset the images will be drawn from the position passed in. The offset will be added to the images position
+     * Also the offsets are reset to zero when begin() is called so this method should be called before drawing the images
+     * but after calling begin on the SpriteBatch.
+     */
+    public void setOffsets(int xOffset, int yOffset) {
+        this.xOffset = xOffset;
+        this.yOffset = yOffset;
     }
 
-    public void draw(float x, float y, int textureX, int textureY, int width, int height, int rotate) {
-        draw(x, y, width, height, textureX, textureY, width, height, rotate);
+    public void draw(float x, float y, Sprite sprite) {
+        draw(x, y, sprite, NO_ROTATE);
     }
 
-    public void draw(float x, float y, int drawWidth, int drawHeight, int textureX, int textureY, int textureWidth, int textureHeight) {
-        draw(x, y, drawWidth, drawHeight, textureX, textureY, textureWidth, textureHeight, NO_ROTATE);
+    public void draw(float x, float y, Sprite sprite, int rotate) {
+        draw(x, y, sprite, rotate);
+    }
+
+    public void draw(float x, float y, int drawWidth, int drawHeight, Sprite sprite) {
+        draw(x, y, drawWidth, drawHeight, sprite, NO_ROTATE);
     }
 
     //TODO make a draw method with a zoom option
@@ -154,13 +176,10 @@ public class SpriteBatch {
      * @param y             The starting screenY point on the screen
      * @param drawWidth     The width to draw the texture
      * @param drawHeight    The height to draw the texture
-     * @param textureX      The starting screenX point of the texture in the texture atlas
-     * @param textureY      The starting screenY point of the texture in the texture atlas
-     * @param textureWidth  The width of the texture in the texture atlas
-     * @param textureHeight The height of the texture in the texture atlas
-     * @param rotate       If the image should be rotate and in what direction it should be rotate
+     * @param sprite        The location of the sprite in the atlas
+     * @param rotate        If the image should be rotate and in what direction it should be rotate
      */
-    public void draw(float x, float y, int drawWidth, int drawHeight, int textureX, int textureY, int textureWidth, int textureHeight, int rotate) {
+    public void draw(float x, float y, int drawWidth, int drawHeight, Sprite sprite, int rotate) {
         if (renderCount >= size) flush();
 
         float x1 = convertXPixelsToCoordinate(x);
@@ -168,11 +187,12 @@ public class SpriteBatch {
         float x2 = convertXPixelsToCoordinate(x + drawWidth);
         float y2 = convertYPixelsToCoordinate(y + drawHeight);
 
+        //TODO If offset are not equal to zero add them to the x, y
 
-        float tx1 = convertTextureXToCoordinate(textureX);
-        float ty1 = convertTextureYToCoordinate(textureY);
-        float tx2 = convertTextureXToCoordinate(textureX + textureWidth);
-        float ty2 = convertTextureYToCoordinate(textureY + textureHeight);
+        float tx1 = convertTextureXToCoordinate(sprite.startX);
+        float ty1 = convertTextureYToCoordinate(sprite.startY);
+        float tx2 = convertTextureXToCoordinate(sprite.endX);
+        float ty2 = convertTextureYToCoordinate(sprite.endY);
 
         switch (rotate) {
             case NO_ROTATE:

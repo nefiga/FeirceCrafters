@@ -1,11 +1,8 @@
 package game.world;
 
-import game.graphics.SpriteBatch;
 import game.map.Map;
 
 public class World {
-
-    SpriteBatch mapBatch;
 
     private Map map;
 
@@ -18,7 +15,7 @@ public class World {
     }
 
     public void render() {
-        map.renderMap(0, 0);
+        renderMap();
     }
 
     private void renderMap() {
