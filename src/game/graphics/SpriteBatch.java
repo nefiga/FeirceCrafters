@@ -32,8 +32,8 @@ public class SpriteBatch {
 
     private boolean flushing;
 
-    private int xOffset;
-    private int yOffset;
+    private float xOffset;
+    private float yOffset;
 
     // Rotates the image clockwise
     public static final int NO_ROTATE = 0, ROTATE_90 = 1, ROTATE_180 = 2, ROTATE_270 = 3;
@@ -150,7 +150,7 @@ public class SpriteBatch {
      * Also the offsets are reset to zero when begin() is called so this method should be called before drawing the images
      * but after calling begin on the SpriteBatch.
      */
-    public void setOffsets(int xOffset, int yOffset) {
+    public void setOffsets(float xOffset, float yOffset) {
         this.xOffset = xOffset;
         this.yOffset = yOffset;
     }
@@ -250,11 +250,11 @@ public class SpriteBatch {
     }
 
     private float convertXPixelsToCoordinate(float xPixels) {
-        return xPixels / Display.getWidth() * 2 - 1;
+        return (xPixels + xOffset) / Display.getWidth() * 2 - 1;
     }
 
     private float convertYPixelsToCoordinate(float yPixels) {
-        return 1 - yPixels / Display.getHeight() * 2;
+        return 1 - (yPixels + yOffset) / Display.getHeight() * 2;
     }
 
     private float convertTextureXToCoordinate(float textureX) {

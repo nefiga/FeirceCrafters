@@ -3,6 +3,7 @@ package game.map;
 import game.graphics.SpriteBatch;
 import game.tiles.Tile;
 import game.tiles.Tiles;
+import game.world.World;
 
 public class Layer {
 
@@ -39,6 +40,7 @@ public class Layer {
         int endY = 20;
 
         spriteBatch.begin();
+        spriteBatch.setOffsets(World.getPlayerXOffset(), World.getPlayerYOffset());
         for (int y = startY; y < endY; y++) {
             for (int x = startX; x < endX; x++) {
                 tiles[x + y * mapWidth].render(tileToPixel(x), tileToPixel(y), spriteBatch);
