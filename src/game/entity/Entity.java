@@ -1,6 +1,5 @@
 package game.entity;
 
-import game.graphics.SpriteBatch;
 import game.math.Vector2;
 
 public class Entity {
@@ -12,10 +11,6 @@ public class Entity {
     }
 
     public void update(long delta) {
-
-    }
-
-    public void render(SpriteBatch spriteBatch) {
 
     }
 

@@ -5,6 +5,8 @@ import game.tiles.Tile;
 import game.tiles.Tiles;
 import game.world.World;
 
+import java.util.Random;
+
 public class Layer {
 
     private int mapWidth;
@@ -24,8 +26,13 @@ public class Layer {
         mapHeight = height;
         tiles = new Tile[width * height];
 
+        Random random = new Random();
         for (int i = 0; i < tiles.length; i++) {
-            tiles[i] = Tiles.greenTile;
+//            int tree = random.nextInt(100);
+//            if (tree < 50)
+                tiles[i] = Tiles.treeTile;
+//            else
+//                tiles[i] = Tiles.greenTile;
         }
 
         durabilty = new int[width * height];
@@ -54,18 +61,19 @@ public class Layer {
     }
 
     public void remove(int xPosition, int yPosition) {
-
+        System.out.println("Removing tile at " + xPosition + "  " + yPosition);
+        tiles[xPosition + yPosition * mapWidth] = Tiles.greenTile;
     }
 
     public void interact(int xPosition, int yPosition) {
 
     }
 
-    private int tileToPixel(int tile) {
+    public static int tileToPixel(int tile) {
         return tile << 6;
     }
 
-    private float pixelToTile(int pixel) {
+    public static float pixelToTile(int pixel) {
         return pixel >> 6;
     }
 }

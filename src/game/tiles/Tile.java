@@ -7,8 +7,6 @@ public class Tile {
 
     private Sprite sprite;
 
-    private int durability;
-
     public Tile(Sprite sprite) {
         this.sprite = sprite;
     }
@@ -31,9 +29,5 @@ public class Tile {
 
     public void update(long delta) {
 
-    }
-
-    public void setDurability(int durability) {
-        this.durability = durability;
     }
 }

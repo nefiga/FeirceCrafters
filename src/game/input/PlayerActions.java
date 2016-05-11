@@ -36,36 +36,19 @@ public class PlayerActions {
 
     private void loadActions() {
         Action up = new Action("UP");
-        up.setOnHoldListener(new Action.OnHoldListener() {
-            @Override
-            public void holding() {
-                player.translateY(1.0F);
-            }
-        });
+        up.setOnHoldListener(() -> player.translateY(1.0F));
 
         Action down = new Action();
-        down.setOnHoldListener(new Action.OnHoldListener() {
-            @Override
-            public void holding() {
-                player.translateY(-1.0F);
-            }
-        });
+        down.setOnHoldListener(() -> player.translateY(-1.0F));
 
         Action left = new Action();
-        left.setOnHoldListener(new Action.OnHoldListener() {
-            @Override
-            public void holding() {
-                player.translateX(1.0F);
-            }
-        });
+        left.setOnHoldListener(() -> player.translateX(1.0F));
 
         Action right = new Action();
-        right.setOnHoldListener(new Action.OnHoldListener() {
-            @Override
-            public void holding() {
-                player.translateX(-1.0F);
-            }
-        });
+        right.setOnHoldListener(() -> player.translateX(-1.0F));
+
+        Action action = new Action();
+        action.setOnClickListener(() -> player.interact());
 
         actions.put(KEY_W, up);
         actions.put(KEY_UP, up);
@@ -75,5 +58,6 @@ public class PlayerActions {
         actions.put(KEY_LEFT, left);
         actions.put(KEY_D, right);
         actions.put(KEY_RIGHT, right);
+        actions.put(KEY_SPACE, action);
     }
 }
