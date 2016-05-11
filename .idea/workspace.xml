@@ -2,15 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37c57cbf-265b-4043-8704-64df9ac68927" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FierceCrafters/game/GameLoop.class" afterPath="$PROJECT_DIR$/out/production/FierceCrafters/game/GameLoop.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/entity/Entity.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/entity/EntitySprites.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/entity/Player.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/graphics/ImageManager.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/graphics/ShaderManager.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/graphics/Sprite.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/graphics/SpriteBatch.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/graphics/Texture.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/graphics/TextureAtlas.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/graphics/TileAtlas.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/map/Layer.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/map/Map.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/tiles/Tiles.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/world/World.kt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/game/entity/Entity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/game/entity/EntitySprites.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/game/entity/Player.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/game/graphics/ImageManager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/game/graphics/ShaderManager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/game/graphics/Sprite.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/game/graphics/SpriteBatch.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/game/graphics/Texture.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/game/graphics/TextureAtlas.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/game/graphics/TileAtlas.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/game/map/Layer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/game/map/Map.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/game/tiles/Tiles.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/game/world/World.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FierceCrafters/game/graphics/ImageManager.class" afterPath="$PROJECT_DIR$/out/production/FierceCrafters/game/graphics/ImageManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FierceCrafters/game/graphics/ShaderManager.class" afterPath="$PROJECT_DIR$/out/production/FierceCrafters/game/graphics/ShaderManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FierceCrafters/game/graphics/SpriteBatch.class" afterPath="$PROJECT_DIR$/out/production/FierceCrafters/game/graphics/SpriteBatch.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FierceCrafters/game/graphics/Texture.class" afterPath="$PROJECT_DIR$/out/production/FierceCrafters/game/graphics/Texture.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FierceCrafters/game/graphics/TextureAtlas.class" afterPath="$PROJECT_DIR$/out/production/FierceCrafters/game/graphics/TextureAtlas.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/GameLoop.java" afterPath="$PROJECT_DIR$/src/game/GameLoop.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entity/Player.java" afterPath="$PROJECT_DIR$/src/game/entity/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/input/PlayerActions.java" afterPath="$PROJECT_DIR$/src/game/input/PlayerActions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/map/Layer.java" afterPath="$PROJECT_DIR$/src/game/map/Layer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/map/Map.java" afterPath="$PROJECT_DIR$/src/game/map/Map.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/world/World.java" afterPath="$PROJECT_DIR$/src/game/world/World.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FierceCrafters.iml" afterPath="$PROJECT_DIR$/FierceCrafters.iml" />
     </list>
     <ignored path="FierceCrafters.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,57 +58,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game/entity/Player.java">
+      <file leaf-file-name="TileAtlas.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/game/graphics/TileAtlas.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding>
-                <element signature="e#731#732#0" expanded="true" />
-                <element signature="e#839#840#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="World.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game/world/World.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="69" column="44" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
-              <folding>
-                <element signature="e#1907#1908#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Map.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game/map/Map.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-              <folding>
-                <element signature="e#671#672#0" expanded="true" />
-                <element signature="e#730#731#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Layer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/game/map/Layer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7479407">
-              <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="52" selection-end-column="0" />
-              <folding>
-                <element signature="e#1500#1501#0" expanded="true" />
-                <element signature="e#1570#1571#0" expanded="true" />
-                <element signature="e#1995#1996#0" expanded="true" />
-                <element signature="e#2067#2068#0" expanded="true" />
-                <element signature="e#2112#2113#0" expanded="true" />
-                <element signature="e#2151#2152#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.056013178">
+              <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -140,10 +121,24 @@
         <option value="$PROJECT_DIR$/src/game/tiles/Tiles.java" />
         <option value="$PROJECT_DIR$/src/game/input/PlayerActions.java" />
         <option value="$PROJECT_DIR$/src/game/GameLoop.java" />
-        <option value="$PROJECT_DIR$/src/game/entity/Player.java" />
-        <option value="$PROJECT_DIR$/src/game/world/World.java" />
-        <option value="$PROJECT_DIR$/src/game/map/Map.java" />
         <option value="$PROJECT_DIR$/src/game/map/Layer.java" />
+        <option value="$PROJECT_DIR$/src/game/map/Map.java" />
+        <option value="$PROJECT_DIR$/src/game/world/World.java" />
+        <option value="$PROJECT_DIR$/src/game/map/Layer.kt" />
+        <option value="$PROJECT_DIR$/src/game/entity/Entity.kt" />
+        <option value="$PROJECT_DIR$/src/game/entity/Player.java" />
+        <option value="$PROJECT_DIR$/src/game/entity/EntitySprites.kt" />
+        <option value="$PROJECT_DIR$/src/game/world/World.kt" />
+        <option value="$PROJECT_DIR$/src/game/entity/Player.kt" />
+        <option value="$PROJECT_DIR$/src/game/graphics/ImageManager.kt" />
+        <option value="$PROJECT_DIR$/src/game/graphics/ShaderManager.kt" />
+        <option value="$PROJECT_DIR$/src/game/graphics/Sprite.kt" />
+        <option value="$PROJECT_DIR$/src/game/graphics/SpriteBatch.kt" />
+        <option value="$PROJECT_DIR$/src/game/tiles/Tiles.kt" />
+        <option value="$PROJECT_DIR$/src/game/map/Map.kt" />
+        <option value="$PROJECT_DIR$/src/game/graphics/Texture.kt" />
+        <option value="$PROJECT_DIR$/src/game/graphics/TextureAtlas.kt" />
+        <option value="$PROJECT_DIR$/src/game/graphics/TileAtlas.kt" />
       </list>
     </option>
   </component>
@@ -226,7 +221,43 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FierceCrafters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FeirceCrafters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FierceCrafters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FeirceCrafters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -243,7 +274,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../LWJGL/LWJGL 2/lwjgl-2.9.3/jar/lwjgl_util.jar!/" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -605,6 +636,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.114072494" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -670,7 +702,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="42" />
+      <option name="time" value="43" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -679,28 +711,28 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/game/graphics/Texture.java">
+    <entry file="file://$PROJECT_DIR$/src/game/graphics/Texture.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="81" column="70" selection-start-line="81" selection-start-column="70" selection-end-line="81" selection-end-column="70" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/graphics/TextureAtlas.java">
+    <entry file="file://$PROJECT_DIR$/src/game/graphics/TextureAtlas.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="228" column="17" selection-start-line="228" selection-start-column="17" selection-end-line="228" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/graphics/ImageManager.java">
+    <entry file="file://$PROJECT_DIR$/src/game/graphics/ImageManager.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/graphics/SpriteBatch.java">
+    <entry file="file://$PROJECT_DIR$/src/game/graphics/SpriteBatch.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
@@ -718,28 +750,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/graphics/Texture.java">
+    <entry file="file://$PROJECT_DIR$/src/game/graphics/Texture.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/graphics/TextureAtlas.java">
+    <entry file="file://$PROJECT_DIR$/src/game/graphics/TextureAtlas.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/graphics/ImageManager.java">
+    <entry file="file://$PROJECT_DIR$/src/game/graphics/ImageManager.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/graphics/SpriteBatch.java">
+    <entry file="file://$PROJECT_DIR$/src/game/graphics/SpriteBatch.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
@@ -757,21 +789,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/graphics/Texture.java">
+    <entry file="file://$PROJECT_DIR$/src/game/graphics/Texture.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/graphics/TextureAtlas.java">
+    <entry file="file://$PROJECT_DIR$/src/game/graphics/TextureAtlas.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/graphics/ImageManager.java">
+    <entry file="file://$PROJECT_DIR$/src/game/graphics/ImageManager.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
@@ -834,20 +866,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/graphics/ShaderManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3360791">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/graphics/TileAtlas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.056013178">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game/util/FileUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7561779">
@@ -869,27 +887,6 @@
     <entry file="file://$PROJECT_DIR$/res/faded.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/graphics/Texture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/graphics/TextureAtlas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/graphics/Sprite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-        </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/../../LWJGL/LWJGL 2/lwjgl-2.9.3/jar/lwjgl.jar!/org/lwjgl/input/Keyboard.class">
@@ -925,27 +922,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/graphics/SpriteBatch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44481054">
-          <caret line="166" column="35" selection-start-line="166" selection-start-column="35" selection-end-line="166" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/entity/EntitySprites.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36408567">
-          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/graphics/ImageManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5601318">
-          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game/tiles/Tile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.64415157">
@@ -969,20 +945,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36408567">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/entity/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.635514">
-          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/tiles/Tiles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22405271">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1035,50 +997,117 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/entity/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/game/map/Layer.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.128501">
+          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/entity/Entity.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/entity/Player.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5881384">
+          <caret line="27" column="101" selection-start-line="27" selection-start-column="101" selection-end-line="27" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/graphics/ImageManager.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2800659">
+          <caret line="13" column="66" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/graphics/ShaderManager.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.8682043">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/graphics/Sprite.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30807248">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/graphics/SpriteBatch.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.3047776">
+          <caret line="167" column="5" selection-start-line="167" selection-start-column="5" selection-end-line="167" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/tiles/Tiles.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42429283">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/map/Map.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5881384">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/graphics/TextureAtlas.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7004992">
+          <caret line="88" column="41" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="41" />
           <folding>
-            <element signature="e#731#732#0" expanded="true" />
-            <element signature="e#839#840#0" expanded="true" />
+            <element signature="e#23#83#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/world/World.java">
+    <entry file="file://$PROJECT_DIR$/src/game/entity/EntitySprites.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="44" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
-          <folding>
-            <element signature="e#1907#1908#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.33943427">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/map/Map.java">
+    <entry file="file://$PROJECT_DIR$/src/game/world/World.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-          <folding>
-            <element signature="e#671#672#0" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.3327787">
+          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/map/Layer.java">
+    <entry file="file://$PROJECT_DIR$/src/game/graphics/Texture.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7479407">
-          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="52" selection-end-column="0" />
-          <folding>
-            <element signature="e#1500#1501#0" expanded="true" />
-            <element signature="e#1570#1571#0" expanded="true" />
-            <element signature="e#1995#1996#0" expanded="true" />
-            <element signature="e#2067#2068#0" expanded="true" />
-            <element signature="e#2112#2113#0" expanded="true" />
-            <element signature="e#2151#2152#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.5024958">
+          <caret line="82" column="7" selection-start-line="82" selection-start-column="7" selection-end-line="82" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/graphics/TileAtlas.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.056013178">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
