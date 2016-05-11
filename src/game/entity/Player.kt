@@ -1,13 +1,10 @@
 package game.entity
 
-import game.Game
 import game.GameLoop
 import game.graphics.Sprite
 import game.graphics.SpriteBatch
-import game.map.Layer
 import game.math.Vector2
 import game.world.World
-import org.lwjgl.opengl.Display
 
 class Player(private val sprite: Sprite, position: Vector2) : Entity(position), VisibleEntity {
 
@@ -28,6 +25,4 @@ class Player(private val sprite: Sprite, position: Vector2) : Entity(position), 
     override fun render(spriteBatch: SpriteBatch) {
         spriteBatch.draw((GameLoop.centerX - 32).toFloat(), (GameLoop.centerY - 32).toFloat(), sprite)
     }
-
-
 }

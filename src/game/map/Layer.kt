@@ -1,12 +1,17 @@
 package game.map
 
+import game.entity.item.LogItemEntity
 import game.graphics.SpriteBatch
+import game.math.Vector2
 import game.tiles.Tile
 import game.tiles.Tiles
+import game.util.Util.pixelToTile
+import game.util.Util.tileToPixel
 import game.world.World
+import org.lwjgl.opengl.Display
 
-class Layer//TODO because we are going to procedurally generate the maps we need some kind of map loader/creator
-(private val spriteBatch: SpriteBatch, private val mapWidth: Int, private val mapHeight: Int) {
+//TODO because we are going to procedurally generate the maps we need some kind of map loader/creator
+class Layer(private val world: World, private val spriteBatch: SpriteBatch, private val mapWidth: Int, private val mapHeight: Int) {
 
     private val tiles: Array<Tile?>
     private val durability: IntArray
@@ -24,23 +29,25 @@ class Layer//TODO because we are going to procedurally generate the maps we need
         }
     }
 
-    //TODO We might want to add more options that just render at x/y like zoom, transparency...
+    //TODO We might want to add more options that just render at x/y like zoom
     fun render(offsetX: Int, offsetY: Int) {
-        val endX = mapWidth
-        val endY = mapHeight
+        var endX = (pixelToTile(Display.getWidth()) - pixelToTile(World.playerXOffset) + 1).toInt()
+        var endY = (pixelToTile(Display.getHeight()) - pixelToTile(World.playerYOffset) + 1).toInt()
+
+        if (offsetX > 0)
+            endX += offsetX
+        if (offsetY > 0)
+            endY += offsetY
 
         spriteBatch.begin()
         spriteBatch.setOffsets(World.playerXOffset, World.playerYOffset)
-        for (y in offsetY..endY - 1) {
+        for (y in offsetY..endY) {
             for (x in offsetX..endX - 1) {
-                tiles[getPosition(x, y)]?.render(tileToPixel(x), tileToPixel(y), spriteBatch)
+                if (inBounds(x, y))
+                    tiles[getPosition(x, y)]?.render(tileToPixel(x).toInt(), tileToPixel(y).toInt(), spriteBatch)
             }
         }
         spriteBatch.end()
-    }
-
-    fun update(xPosition: Int, yPosition: Int, delta: Long) {
-        tiles[getPosition(xPosition, yPosition)]?.update(delta)
     }
 
     fun remove(xPosition: Int, yPosition: Int) {
@@ -53,8 +60,10 @@ class Layer//TODO because we are going to procedurally generate the maps we need
 
             durability[position] -= 20
 
-            if (durability[position] <= 0)
+            if (durability[position] <= 0) {
                 tiles[position] = Tiles.greenTile
+                world.addItemEntity(LogItemEntity(Vector2(tileToPixel(xPosition).toFloat(), tileToPixel(yPosition).toFloat())))
+            }
         }
     }
 
@@ -67,13 +76,5 @@ class Layer//TODO because we are going to procedurally generate the maps we need
     }
 
     companion object {
-
-        fun tileToPixel(tile: Int): Int {
-            return tile shl 6
-        }
-
-        fun pixelToTile(pixel: Int): Float {
-            return (pixel shr 6).toFloat()
-        }
     }
 }

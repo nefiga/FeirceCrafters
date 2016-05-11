@@ -1,25 +1,22 @@
 package game.map
 
 import game.tiles.Tiles
+import game.world.World
 
 import java.util.HashMap
 
-class Map {
+class Map(val world: World) {
 
     private val layers: HashMap<String, Layer>? = null
 
     private var currentLayer: Layer? = null
 
     init {
-        currentLayer = Layer(Tiles.spriteBatch, 10, 10)
+        currentLayer = Layer(world, Tiles.spriteBatch, 10000, 10000)
     }
 
     fun renderMap(offsetX: Int, offsetY: Int) {
         currentLayer!!.render(offsetX, offsetY)
-    }
-
-    fun update(xPosition: Int, yPosition: Int, delta: Long) {
-        currentLayer!!.update(xPosition, yPosition, delta)
     }
 
     fun remove(xPosition: Int, yPosition: Int) {
