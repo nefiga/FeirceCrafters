@@ -35,7 +35,7 @@ class World {
 
     fun updateEntities(delta: Long) {
         player.update(delta)
-        updatePlayerOffsets(player.x + GameLoop.getCenterX(), player.y + GameLoop.getCenterY())
+        updatePlayerOffsets(player.x + GameLoop.centerX, player.y + GameLoop.centerY)
     }
 
     fun render() {

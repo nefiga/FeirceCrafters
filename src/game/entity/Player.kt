@@ -1,6 +1,7 @@
 package game.entity
 
 import game.Game
+import game.GameLoop
 import game.graphics.Sprite
 import game.graphics.SpriteBatch
 import game.map.Layer
@@ -25,7 +26,7 @@ class Player(private val sprite: Sprite, position: Vector2) : Entity(position), 
     }
 
     override fun render(spriteBatch: SpriteBatch) {
-        spriteBatch.draw((Game.getCenterX() - 32).toFloat(), (Game.getCenterY() - 32).toFloat(), sprite)
+        spriteBatch.draw((GameLoop.centerX - 32).toFloat(), (GameLoop.centerY - 32).toFloat(), sprite)
     }
 
 
