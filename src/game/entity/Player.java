@@ -1,10 +1,12 @@
 package game.entity;
 
+import game.Game;
 import game.graphics.Sprite;
 import game.graphics.SpriteBatch;
 import game.map.Layer;
 import game.math.Vector2;
 import game.world.World;
+import org.lwjgl.opengl.Display;
 
 public class Player extends Entity implements VisibleEntity {
 
@@ -26,12 +28,12 @@ public class Player extends Entity implements VisibleEntity {
     }
 
     public void interact() {
-        world.interact(-position.getX() - World.getPlayerXOffset(), -position.getY() - World.getPlayerYOffset());
+        world.interact(-position.getX() - 32, -position.getY() -32);
     }
 
     @Override
     public void render(SpriteBatch spriteBatch) {
-        spriteBatch.draw(position.getX() - World.getPlayerXOffset(), position.getY() - World.getPlayerYOffset(), sprite);
+        spriteBatch.draw((float) (Game.getCenterX() - 32), (float) (Game.getCenterY() - 32), sprite);
     }
 
 

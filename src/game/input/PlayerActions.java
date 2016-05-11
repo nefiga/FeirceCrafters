@@ -36,16 +36,16 @@ public class PlayerActions {
 
     private void loadActions() {
         Action up = new Action("UP");
-        up.setOnHoldListener(() -> player.translateY(1.0F));
+        up.setOnHoldListener(() -> player.translateY(3F));
 
         Action down = new Action();
-        down.setOnHoldListener(() -> player.translateY(-1.0F));
+        down.setOnHoldListener(() -> player.translateY(-3F));
 
         Action left = new Action();
-        left.setOnHoldListener(() -> player.translateX(1.0F));
+        left.setOnHoldListener(() -> player.translateX(3F));
 
         Action right = new Action();
-        right.setOnHoldListener(() -> player.translateX(-1.0F));
+        right.setOnHoldListener(() -> player.translateX(-3F));
 
         Action action = new Action();
         action.setOnClickListener(() -> player.interact());

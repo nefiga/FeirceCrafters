@@ -19,6 +19,9 @@ public class GameLoop {
     private long lastFPS;
     private int fps;
 
+    private static int centerX;
+    private static int centerY;
+
     public GameLoop() {
         gameLoop = this;
 
@@ -38,6 +41,9 @@ public class GameLoop {
 
     public void init() {
         glClearColor(0, 0, 0, 0);
+
+        centerX = Display.getWidth() / 2;
+        centerY = Display.getHeight() / 2;
     }
 
     public void loop() {
@@ -92,6 +98,8 @@ public class GameLoop {
 
     public static void resized() {
         glViewport(0, 0, Display.getWidth(), Display.getHeight());
+        centerX = Display.getWidth() / 2;
+        centerY = Display.getHeight() / 2;
     }
 
     public void dispose() {
@@ -102,6 +110,14 @@ public class GameLoop {
         gameLoop.dispose();
         Display.destroy();
         System.exit(0);
+    }
+
+    public static int getCenterX() {
+        return centerX;
+    }
+
+    public static int getCenterY() {
+        return centerY;
     }
 
     /**

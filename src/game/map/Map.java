@@ -23,7 +23,7 @@ public class Map {
     }
 
     public void remove(int xPosition, int yPosition) {
-        currentLayer.remove(xPosition, yPosition);
+
     }
 
     //Should take an entity once they have been set up

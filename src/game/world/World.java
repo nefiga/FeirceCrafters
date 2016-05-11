@@ -24,7 +24,7 @@ public class World {
 
     public World() {
         map = new Map();
-        player = new Player(EntitySprites.playerSprite, new Vector2(-1000, -1000));
+        player = new Player(EntitySprites.playerSprite, new Vector2(-19200, -19200));
         player.joinWorld(this);
         entitySpriteBatch = new SpriteBatch(ShaderManager.NORMAL_TEXTURE, new Texture(EntitySprites.entitySpriteAtlas), 1000);
         InputHandler.setActions(new PlayerActions(player).getActions());
@@ -36,7 +36,7 @@ public class World {
 
     public void updateEntities(long delta) {
         player.update(delta);
-        updatePlayerOffsets(player.getX() - Display.getWidth() / 2, player.getY() - Display.getHeight() / 2);
+        updatePlayerOffsets(player.getX() + Display.getWidth() / 2, player.getY() + Display.getHeight() / 2);
     }
 
     public void render() {
@@ -68,6 +68,6 @@ public class World {
     }
 
     public void interact(float x, float y) {
-        map.remove((int) Layer.pixelToTile((int) x), (int) Layer.pixelToTile((int) y));
+        map.interact((int) Layer.pixelToTile((int) x), (int) Layer.pixelToTile((int) y));
     }
 }
