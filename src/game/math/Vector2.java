@@ -25,4 +25,12 @@ public class Vector2 {
     public void setY(float y) {
         this.y = y;
     }
+
+    public void translateX(float x) {
+        this.x =  this.x + x;
+    }
+
+    public void translateY(float y) {
+        this.y = this.y + y;
+    }
 }

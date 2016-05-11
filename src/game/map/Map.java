@@ -11,7 +11,7 @@ public class Map {
     private Layer currentLayer;
 
     public Map() {
-        currentLayer = new Layer(Tiles.spriteBatch, 30, 20);
+        currentLayer = new Layer(Tiles.spriteBatch, 300, 300);
     }
 
     public void renderMap(int offsetX, int offsetY) {

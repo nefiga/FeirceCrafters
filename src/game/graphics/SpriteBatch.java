@@ -1,7 +1,10 @@
 package game.graphics;
 
+import game.math.Vector2;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.Display;
+import org.lwjgl.util.vector.Vector;
+import org.omg.CORBA.NO_IMPLEMENT;
 
 import java.nio.FloatBuffer;
 import java.nio.ShortBuffer;
@@ -36,7 +39,9 @@ public class SpriteBatch {
     private float yOffset;
 
     // Rotates the image clockwise
-    public static final int NO_ROTATE = 0, ROTATE_90 = 1, ROTATE_180 = 2, ROTATE_270 = 3;
+    public enum Rotation {
+        NO_ROTATE, ROTATE_90, ROTATE_180, ROTATE_270
+    }
 
     /**
      * Creates a new SpriteBatcher Object
@@ -155,16 +160,20 @@ public class SpriteBatch {
         this.yOffset = yOffset;
     }
 
-    public void draw(float x, float y, Sprite sprite) {
-        draw(x, y, sprite, NO_ROTATE);
+    public void draw(Vector2 position, Sprite sprite) {
+        draw(position.getX(), position.getY(), sprite);
     }
 
-    public void draw(float x, float y, Sprite sprite, int rotate) {
-        draw(x, y, sprite, rotate);
+    public void draw(float x, float y, Sprite sprite) {
+        draw(x, y, sprite, Rotation.NO_ROTATE);
+    }
+
+    public void draw(float x, float y, Sprite sprite, Rotation rotate) {
+        draw(x, y, sprite.width, sprite.height, sprite, rotate);
     }
 
     public void draw(float x, float y, int drawWidth, int drawHeight, Sprite sprite) {
-        draw(x, y, drawWidth, drawHeight, sprite, NO_ROTATE);
+        draw(x, y, drawWidth, drawHeight, sprite, Rotation.NO_ROTATE);
     }
 
     //TODO make a draw method with a zoom option
@@ -179,7 +188,7 @@ public class SpriteBatch {
      * @param sprite        The location of the sprite in the atlas
      * @param rotate        If the image should be rotate and in what direction it should be rotate
      */
-    public void draw(float x, float y, int drawWidth, int drawHeight, Sprite sprite, int rotate) {
+    public void draw(float x, float y, int drawWidth, int drawHeight, Sprite sprite, Rotation rotate) {
         if (renderCount >= size) flush();
 
         float x1 = convertXPixelsToCoordinate(x);

@@ -1,15 +1,26 @@
 package game.entity;
 
+import game.graphics.Sprite;
+import game.graphics.SpriteBatch;
 import game.math.Vector2;
+import game.world.World;
 
-public class Player extends Entity {
+public class Player extends Entity implements VisibleEntity{
 
-    public Player(Vector2 position) {
+    private Sprite sprite;
+
+    public Player(Sprite sprite, Vector2 position) {
         super(position);
+        this.sprite = sprite;
     }
 
     public void update(long delta) {
-        position.setX(position.getX() + 1);
-        position.setY(position.getY() + 1);
     }
+
+    @Override
+    public void render(SpriteBatch spriteBatch) {
+        spriteBatch.draw(position.getX() - World.getPlayerXOffset(), position.getY() - World.getPlayerYOffset(), sprite);
+    }
+
+
 }

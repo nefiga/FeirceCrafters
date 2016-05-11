@@ -26,4 +26,12 @@ public class Entity {
     public float getY() {
         return position.getY();
     }
+
+    public void translateX(float x) {
+        position.translateX(x);
+    }
+
+    public void translateY(float y) {
+        position.translateY(y);
+    }
 }

@@ -1,5 +1,6 @@
 package game;
 
+import game.input.InputHandler;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.Sys;
 import org.lwjgl.opengl.ContextAttribs;
@@ -49,6 +50,7 @@ public class GameLoop {
         while (!Display.isCloseRequested()) {
             thisFrame = getCurrentTime();
 
+            InputHandler.update();
             update(thisFrame - lastFrame);
             render();
 

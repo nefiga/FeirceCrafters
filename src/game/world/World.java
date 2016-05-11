@@ -1,6 +1,12 @@
 package game.world;
 
+import game.entity.EntitySprites;
 import game.entity.Player;
+import game.graphics.ShaderManager;
+import game.graphics.SpriteBatch;
+import game.graphics.Texture;
+import game.input.InputHandler;
+import game.input.PlayerActions;
 import game.map.Map;
 import game.math.Vector2;
 import org.lwjgl.opengl.Display;
@@ -13,9 +19,13 @@ public class World {
     private static float playerXOffset;
     private static float playerYOffset;
 
+    private SpriteBatch entitySpriteBatch;
+
     public World() {
         map = new Map();
-        player = new Player(new Vector2(0, 0));
+        player = new Player(EntitySprites.playerSprite, new Vector2(-1000, -1000));
+        entitySpriteBatch = new SpriteBatch(ShaderManager.NORMAL_TEXTURE, new Texture(EntitySprites.entitySpriteAtlas), 1000);
+        InputHandler.setActions(new PlayerActions(player).getActions());
     }
 
     public void update(long delta) {
@@ -29,10 +39,13 @@ public class World {
 
     public void render() {
         renderMap();
+        renderEntities();
     }
 
     private void renderEntities() {
-
+        entitySpriteBatch.begin();
+        player.render(entitySpriteBatch);
+        entitySpriteBatch.end();
     }
 
     private void renderMap() {

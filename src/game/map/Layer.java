@@ -36,8 +36,8 @@ public class Layer {
     public void render(int offsetX, int offsetY) {
         int startX = offsetX;
         int startY = offsetY;
-        int endX = 30;
-        int endY = 20;
+        int endX = mapWidth;
+        int endY = mapHeight;
 
         spriteBatch.begin();
         spriteBatch.setOffsets(World.getPlayerXOffset(), World.getPlayerYOffset());
