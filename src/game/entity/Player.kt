@@ -25,7 +25,7 @@ class Player() : Entity(Vector2(0F, 0F)), VisibleEntity {
     }
 
     fun harvest() {
-        world?.harvest(this, TilePosition.fromPixels(-x - 32, -y -90))
+        world?.harvest(this, TilePosition.fromPixels(x - 32, y -90))
     }
 
     override fun render(spriteBatch: SpriteBatch) {

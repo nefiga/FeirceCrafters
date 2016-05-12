@@ -47,7 +47,7 @@ class World {
 
         player.update(delta)
 
-        updatePlayerOffsets(player.x + GameLoop.centerX, player.y + GameLoop.centerY)
+        updatePlayerOffsets(-player.x + GameLoop.centerX, -player.y + GameLoop.centerY)
     }
 
     fun render() {

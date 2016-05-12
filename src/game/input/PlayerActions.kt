@@ -29,16 +29,16 @@ class PlayerActions(private val player: Player) {
 
     private fun loadActions() {
         val up = Action("UP")
-        up.setOnHoldListener { player.translateY(3f) }
+        up.setOnHoldListener { player.translateY(-3f) }
 
         val down = Action()
-        down.setOnHoldListener { player.translateY(-3f) }
+        down.setOnHoldListener { player.translateY(3f) }
 
         val left = Action()
-        left.setOnHoldListener { player.translateX(3f) }
+        left.setOnHoldListener { player.translateX(-3f) }
 
         val right = Action()
-        right.setOnHoldListener { player.translateX(-3f) }
+        right.setOnHoldListener { player.translateX(3f) }
 
         val action = Action()
         action.setOnClickListener { player.harvest() }

@@ -58,8 +58,8 @@ class Layer(private val world: World, private val spriteBatch: SpriteBatch, priv
             durability[index] -= 20
 
             if (durability[index] <= 0) {
-                tiles[index] = Tiles.greenTile
                 tiles[index]?.brake(world, Vector2(position.pixelX(), position.pixelY()))
+                tiles[index] = Tiles.greenTile
             }
         }
     }
