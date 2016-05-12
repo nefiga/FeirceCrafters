@@ -11,5 +11,5 @@ object EntitySprites {
 
     val entitySpriteAtlas = TextureAtlas(TextureAtlas.LARGE)
 
-    val playerSprite = entitySpriteAtlas.addTexture("faded", ImageManager.getImage("/faded"))
+    val playerSprite = entitySpriteAtlas.addTexture("KnightFront", ImageManager.getImage("/entities/knight_front"))
 }

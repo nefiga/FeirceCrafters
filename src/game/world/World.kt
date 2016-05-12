@@ -13,6 +13,7 @@ import game.input.PlayerActions
 import game.util.Util.pixelToTile
 import game.util.Util.tileToPixel
 import game.map.Map
+import game.math.TilePosition
 import game.math.Vector2
 import java.util.*
 
@@ -29,7 +30,7 @@ class World {
 
     init {
         map = Map(this)
-        player = Player(EntitySprites.playerSprite, Vector2(0F, 0F))
+        player = Player()
         player.joinWorld(this)
         entitySpriteBatch = SpriteBatch(ShaderManager.NORMAL_TEXTURE, Texture(EntitySprites.entitySpriteAtlas), 1000)
         entityItemSpriteBatch = SpriteBatch(ShaderManager.NORMAL_TEXTURE, Texture(ItemEntitySprites.itemEntityAtlas), 1000)
@@ -41,7 +42,11 @@ class World {
     }
 
     fun updateEntities(delta: Long) {
+        for (itemEntity in itemEntities)
+            itemEntity.update(delta)
+
         player.update(delta)
+
         updatePlayerOffsets(player.x + GameLoop.centerX, player.y + GameLoop.centerY)
     }
 
@@ -70,6 +75,10 @@ class World {
     private fun updatePlayerOffsets(x: Float, y: Float) {
         playerXOffset = x
         playerYOffset = y
+    }
+
+    fun harvest(player: Player, tilePosition: TilePosition) {
+        map.harvest(player, tilePosition)
     }
 
     fun interact(x: Float, y: Float) {

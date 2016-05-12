@@ -41,7 +41,7 @@ class PlayerActions(private val player: Player) {
         right.setOnHoldListener { player.translateX(-3f) }
 
         val action = Action()
-        action.setOnClickListener { player.interact() }
+        action.setOnClickListener { player.harvest() }
 
         actions.put(KEY_W, up)
         actions.put(KEY_UP, up)

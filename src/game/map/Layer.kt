@@ -1,7 +1,8 @@
 package game.map
 
-import game.entity.item.LogItemEntity
+import game.entity.Player
 import game.graphics.SpriteBatch
+import game.math.TilePosition
 import game.math.Vector2
 import game.tiles.Tile
 import game.tiles.Tiles
@@ -44,25 +45,21 @@ class Layer(private val world: World, private val spriteBatch: SpriteBatch, priv
         for (y in offsetY..endY) {
             for (x in offsetX..endX - 1) {
                 if (inBounds(x, y))
-                    tiles[getPosition(x, y)]?.render(tileToPixel(x).toInt(), tileToPixel(y).toInt(), spriteBatch)
+                    tiles[getTileIndex(x, y)]?.render(tileToPixel(x).toInt(), tileToPixel(y).toInt(), spriteBatch)
             }
         }
         spriteBatch.end()
     }
 
-    fun remove(xPosition: Int, yPosition: Int) {
+    fun harvest(player: Player, position: TilePosition) {
+        if (inBounds(position)) {
+            val index = position.index(mapWidth)
 
-    }
+            durability[index] -= 20
 
-    fun interact(xPosition: Int, yPosition: Int) {
-        if (inBounds(xPosition, yPosition)) {
-            val position = getPosition(xPosition, yPosition)
-
-            durability[position] -= 20
-
-            if (durability[position] <= 0) {
-                tiles[position] = Tiles.greenTile
-                world.addItemEntity(LogItemEntity(Vector2(tileToPixel(xPosition).toFloat(), tileToPixel(yPosition).toFloat())))
+            if (durability[index] <= 0) {
+                tiles[index] = Tiles.greenTile
+                tiles[index]?.brake(world, Vector2(position.pixelX(), position.pixelY()))
             }
         }
     }
@@ -71,8 +68,16 @@ class Layer(private val world: World, private val spriteBatch: SpriteBatch, priv
         return x >= 0 && y >= 0 && x < mapWidth && y < mapHeight
     }
 
-    private fun getPosition(x: Int, y: Int): Int {
+    private fun inBounds(tilePosition: TilePosition): Boolean {
+        return tilePosition.x >= 0 && tilePosition.y >= 0 && tilePosition.x < mapWidth && tilePosition.y < mapHeight
+    }
+
+    private fun getTileIndex(x: Int, y: Int): Int {
         return x + y * mapWidth
+    }
+
+    private fun getTileIndex(tilePosition: TilePosition): Int {
+        return (tilePosition.x + tilePosition.y * mapWidth).toInt()
     }
 
     companion object {

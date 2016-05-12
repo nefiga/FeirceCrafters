@@ -1,5 +1,8 @@
 package game.map
 
+import game.entity.Player
+import game.math.TilePosition
+import game.math.Vector2
 import game.tiles.Tiles
 import game.world.World
 
@@ -23,9 +26,13 @@ class Map(val world: World) {
 
     }
 
+    fun harvest(player: Player, tilePosition: TilePosition) {
+        currentLayer?.harvest(player, tilePosition)
+    }
+
     //Should take an entity once they have been set up
     fun interact(xPosition: Int, yPosition: Int) {
-        currentLayer!!.interact(xPosition, yPosition)
+
     }
 
     fun addLayer(name: String, layer: Layer) {

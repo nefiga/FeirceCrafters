@@ -3,12 +3,18 @@ package game.entity
 import game.GameLoop
 import game.graphics.Sprite
 import game.graphics.SpriteBatch
+import game.math.TilePosition
 import game.math.Vector2
 import game.world.World
 
-class Player(private val sprite: Sprite, position: Vector2) : Entity(position), VisibleEntity {
+class Player() : Entity(Vector2(0F, 0F)), VisibleEntity {
 
+    private var sprite: Sprite
     private var world: World? = null
+
+    init {
+        sprite = EntitySprites.playerSprite
+    }
 
     fun joinWorld(world: World) {
         this.world = world
@@ -18,8 +24,8 @@ class Player(private val sprite: Sprite, position: Vector2) : Entity(position), 
 
     }
 
-    fun interact() {
-        world?.interact(-x - 32, -y - 32)
+    fun harvest() {
+        world?.harvest(this, TilePosition.fromPixels(-x - 32, -y -90))
     }
 
     override fun render(spriteBatch: SpriteBatch) {

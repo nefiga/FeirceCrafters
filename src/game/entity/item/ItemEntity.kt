@@ -9,13 +9,9 @@ import game.math.Vector2
 /**
  * Created by thewa on 5/11/2016.
  */
-open class ItemEntity(position: Vector2) : Entity(position), VisibleEntity{
+open abstract class ItemEntity(position: Vector2) : Entity(position), VisibleEntity{
 
-    val sprite: Sprite
-
-    init {
-        sprite = ItemEntitySprites.logSprite
-    }
+    abstract val sprite: Sprite
 
     override fun render(spriteBatch: SpriteBatch) {
         spriteBatch.draw(position, sprite)
